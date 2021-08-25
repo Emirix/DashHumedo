@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-*{
-}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -11,6 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
     background-attachment: fixed;
     background: linear-gradient(180deg, rgba(52,73,94,0.9) 0%, rgba(0,0,0,0.9) 25%, rgba(0,0,0,1) 75%, rgba(52,73,94,0.9) 100%);
 }
@@ -21,7 +21,13 @@ body{
     min-height: 100vh;
     justify-content: center;
 }
-
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+.w-25{
+    width: 25% !important;
+}
 .login-con{
     display: flex;
     flex-direction: column;
@@ -73,9 +79,16 @@ font-size: 24px;
 font-weight: bold;
 width: 100%;height: 45px;
 cursor: pointer;
+transition: .2s;
 display: flex;
+user-select: none !important;
 align-items: center;
 justify-content: center;
+
+&:hover{
+    background: transparent linear-gradient(-90deg, #7EE8DBCC 0%, #3EBDAECC 28%, #02B4D0CC 77%, #00DCFFCF 100%) 0% 0% no-repeat padding-box;
+
+}
 }
 
 .btn-text{
@@ -150,20 +163,20 @@ justify-content: center;
             
         }
 
-        input{
-            margin-top: 0.3rem;
-            margin-bottom: 0.8rem;
+
+    }
+
+    
+}        input{
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
 background: transparent !important;
 width: 100%;
 font-size: 18px;
 border: none;
 outline: none;
 color: #FFFFFFB3;
-            border-bottom: 1px solid #8D8F91E6;
-        }
-    }
-
-    
+    border-bottom: 1px solid #8D8F91E6;
 }
 
 .badge-btn{
@@ -192,9 +205,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
-
+.mt-10{
+    margin-top: 4rem !important;
+}
 .mt-5{
-    margin-top: 2rem;
+    margin-top: 2rem !important;
 }
 .mt-3{
     margin-top: 1.5rem;
@@ -248,7 +263,8 @@ border-radius: 14px;
 }
 
 .ov{
-    width: 70%;
+    width: 75%;
+    max-width: 1100px;
 }
 
 .sari{
@@ -295,6 +311,9 @@ border-radius: 14px;
                 margin-left: auto;
                 display: flex;
                 flex-direction: column;
+                .pil{
+                    margin-left: auto;
+                }
                 justify-content: space-evenly;
             }
 
@@ -386,7 +405,7 @@ border-radius: 14px;
     border: none !important;
 }
 
-.arc_lr button{
+.arc_view_cell.arc_lr button{
     color: #00423B !important ;
 }
 
@@ -399,6 +418,10 @@ border-radius: 14px;
 
 }
 
+.arc_view_weekdays{
+    margin: 0 !important;
+}
+
 .takvim{
 
 }
@@ -408,12 +431,227 @@ border-radius: 14px;
     margin-left: 1rem;
     display: flex;
     justify-content: center;
+    padding-top: 3rem;
     align-items: center;
    height: 330px;
+   max-width: 329px !important;
 
 }
 
 .takvim-copyright{
     color: #00423B;
-    font-size: 14px;
+    font-size: 14px;    position: relative;
+    top: -28px;
+    left: 10px;
+}
+
+.border-mavi{
+        height: 3px;
+        background-color: #03DAC5;border-radius: 60px;
+
+}
+
+.takvim-date{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    text-align: center;letter-spacing: 0.50px;
+
+    margin-bottom: 0.5rem;
+}
+
+.takvim-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 0.5rem;
+
+    .calendar-title{
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .day{
+        letter-spacing: 0.22px;
+
+    }
+}
+
+.chart-con{ display: flex;
+    
+    margin-top: 1rem;
+    .sol{    font-family: 'Source Sans Pro', sans-serif;
+
+        width: 69%;
+        height: 356px;
+        position: relative;
+        .btn{
+            position: absolute;
+            width: 50%;
+            left: 50%;
+            top: 110%;
+            transform: translate(-50%,50%);
+        }
+        &__header{
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+
+            .date{
+                font-size: 28px;letter-spacing: 0.39px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+            }
+
+            .temp{
+                font-family: "Roboto",sans-serif;
+                font-size: 23px;letter-spacing: 0.92px;
+
+            }
+        }
+        canvas{
+            position: absolute;
+            left: -40px;
+            height: 306px !important;
+            bottom: -28px;
+        }
+        
+        
+    }
+
+    .sag{
+        margin-left: 1rem;
+        display: grid;
+        grid-gap: 0.9rem;
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 165px 165px;
+        width: 30%;
+    }
+}
+
+.mini-box{
+    padding: 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    img{
+        width: 20px;
+        height: 20px;
+    }
+    .title{
+        font-size: 18px;
+        font-family: "Roboto";
+    }
+    .min{
+        font-size: 24px;
+    }
+}
+.grid-1{
+    grid-template-columns: 160px !important;
+}
+.jcenter{
+    justify-content: center !important;
+}
+.w-100{
+    width: 100% !important;
+}
+.stat-header{
+    height:33px;
+    display: flex;
+    width: 63%;
+    align-items: center;
+    margin: 2rem 0;
+        padding: 0 2rem;
+
+        .pil{
+            margin-left: auto;
+        }
+    span{
+        font-size: 18px;
+        
+    }
+}
+
+.takvim-sakla{
+    max-height: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.p-relative{
+    position: relative;
+}
+.tak{border: 1px solid #9B9B9B4F;
+    border-radius: 14px;    width: 240px;
+    padding: 2.5rem;    width: 240px;
+    position: absolute;
+    top: -231px;
+    overflow: hidden;
+    transition: .2s;
+    left: -164px;box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 26px -5px rgba(0,0,0,0.75);
+    
+    background: transparent linear-gradient(156deg, #434958 0%, #0D0F1294 100%) 0% 0% no-repeat padding-box;
+}
+
+.w-40{
+    width: 40%;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.w-70{
+    width: 70%;
+}
+
+.edit-pilsensor{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .pil{
+        margin-left: 0.5rem;
+    }
+}
+
+.slider-container{
+    &__flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;    height: 35px;
+        .title{
+            font-size: 18px;letter-spacing: 0.72px;
+
+        }
+        .val{
+            display: flex;letter-spacing: 0.72px;
+
+            font-size: 18px;
+            align-items: center;
+            img{
+                width: 20px;
+                height: 20px;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+
+    .min-max{letter-spacing: 0.56px;
+
+        font-size: 14px;
+        color: #FFFFFFB3;
+    }
+
+
+}
+
+.MuiSlider-root{ 
+    color: #03DAC5 !important;
 }
