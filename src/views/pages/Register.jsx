@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../component/Header";
+import {Link} from "react-router-dom"
 
 function Register() {
   return (
@@ -38,8 +39,8 @@ function Register() {
 
         <button className="btn mt-5">Register</button>
 
-        <div className="btn-text">Already have an account? <span className="mavi">Log in</span></div>
-        <div className="btn-text">Exit</div>
+        <Link to="/" className="btn-text">Already have an account? <span className="mavi">Log in</span></Link>
+        <Link to="/" className="btn-text">Exit</Link>
       </div>
     </div>
   );

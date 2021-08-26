@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 function Login() {
   return (
     <div className="center">
@@ -9,17 +9,17 @@ function Login() {
         <form action="">
             <div className="icon-input">
                 <img src="svg/person.svg" alt="" />
-                <input type="text" />
+                <input type="text"  autocomplete="off"/>
             </div>
 
             <div className="icon-input">
                 <img src="svg/finger.svg" alt="" />
-                <input type="text" />
+                <input type="password" autocomplete="off" />
             </div>
 
             <button className="btn">LOG</button>
             <div className="btn-text">Forgot password?</div>
-            <div className="btn-text">Register for Húmedo</div>
+            <Link to="/register" className="btn-text">Register for Húmedo</Link>
         </form>
       </div>
     </div>
