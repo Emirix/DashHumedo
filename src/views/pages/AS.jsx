@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Header from "../component/Header";
 import Switch from "react-switch";
+import axios  from "axios";
 
 function AS() {
   const [c1, s1] = useState(true);
   const [c2, s2] = useState(false);
   const [c3, s3] = useState(false);
   const [c4, s4] = useState(true);
+
+  useEffect(()=>{
+    axios.get("/router/info/get",{
+      headers: {
+        "Authorization" : `Bearer ${localStorage.getItem("humedo_access")}`
+      }
+    }).then(res=>{
+      console.log(res)
+    })
+  },[])
+
   return (
     <div className="center">
       <div className="register">

@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+
 } from "react-router-dom";
 import Login from "./views/pages/Login";
 import Register from "./views/pages/Register";
